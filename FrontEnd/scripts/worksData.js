@@ -32,7 +32,6 @@ works.forEach((work) => {
   figure.appendChild(image);
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
-  console.log(figure.category);
 });
 
 function filterCategory(e) {

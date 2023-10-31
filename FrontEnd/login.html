@@ -13,6 +13,7 @@
     <title>Page de connexion</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/login.css">
+    <script type="module" src="scripts/login.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,12 +21,12 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index.html">projets</a></li>
-                    <li>
-                        <a href="#">contact</a></li>
-                        <li>
-                        <a href="login.html">login</a></li>
-                        <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+                <a href="index.html">projets</a></li>
+                <li>
+                <a href="index.html#formulaire">contact</a></li>
+                <li>
+                <a href="login.html">login</a></li>
+                <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
             </ul>
             </nav>
     </header>
@@ -41,7 +42,7 @@
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <button type="submit">Se connecter</button>
+                <button type="submit" id="loginButton">Se connecter</button>
             </form>
             <p><a class="mdp" href="#">Mot de passe oublié</a></p>
         </main>
