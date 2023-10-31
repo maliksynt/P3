@@ -240,15 +240,16 @@ li:hover {
   min-width: 100px;
 }
 
+.active {
+  background-color: #1d6154;
+  color: white;
+}
+
 .filterBtn:hover {
   background-color: #1d6154;
   color: white;
 }
 
-.filterBtn:active {
-  background-color: #1d6154;
-  color: white;
-}
 
 .gallery {
   width: 100%;
@@ -256,6 +257,10 @@ li:hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+}
+
+.hide {
+  display: none;
 }
 
 .gallery img {

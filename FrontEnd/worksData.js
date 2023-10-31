@@ -18,6 +18,7 @@ const works = await fetchData();
 const figure = document.querySelector("figure");
 const image = document.querySelector("img");
 const figcaption = document.querySelector("figcaption");
+const filterButtons = document.querySelectorAll(".filterBtn");
 
 works.forEach((work) => {
   const figure = document.createElement("figure");
@@ -25,8 +26,26 @@ works.forEach((work) => {
   const figcaption = document.createElement("figcaption");
   image.src = work.imageUrl;
   image.setAttribute("alt", work.title);
+  figure.category = work.category.name;
   figcaption.innerText = work.title;
+  figure.classList.add("workfigure");
   figure.appendChild(image);
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
+  console.log(figure.category);
 });
+
+function filterCategory(e) {
+  const allFigures = document.querySelectorAll(".workfigure");
+  document.querySelector(".active").classList.remove("active");
+  e.target.classList.add("active");
+
+  allFigures.forEach((figure) => {
+    if (figure.category === e.target.dataset.name || e.target.dataset.name === "Tous") {
+      figure.classList.remove("hide");}
+    else {
+      figure.classList.add("hide");}
+    });
+}
+
+filterButtons.forEach(button => button.addEventListener('click', filterCategory));
