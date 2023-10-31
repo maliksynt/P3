@@ -1,0 +1,111 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body{
+    max-width: 1140px;
+    margin: auto;
+    font-family: "Work Sans";
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+a {
+    font-size: 16.8px;
+}
+
+main {
+    margin-top : 150px;
+    display : flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+main h2 {
+    margin-bottom: 50px;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap : 5px;
+    margin-bottom: 25px;
+}
+
+label {
+    color: #3D3D3D;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+input {
+    width: 380px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 16px;
+    border : 1px solid white;
+    filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.1));
+}
+
+input:focus {
+    outline: none;
+    border : 1px solid #1D6154;
+}
+
+form button {
+    font-family : 'Syne';
+    width: 180px;
+    height: 36px;
+    background-color: #1D6154;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+form button:hover {
+    color: #1D6154;
+    background-color: white;
+    border: 1px solid #1D6154;
+}
+
+.mdp {
+    font-family: 'Work Sans';
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top : 220px;
+}
+
+footer nav li {
+    padding: 0;
+    font-size: 14px;
+}
