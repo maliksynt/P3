@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,48 +11,54 @@
     />
     <meta name="description" content="" />
     <title>Page de connexion</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="assets/login.css">
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/login.css" />
     <script type="module" src="scripts/login.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-        <nav>
-            <ul>
-                <li>
-                <a href="index.html">projets</a></li>
-                <li>
-                <a href="index.html#formulaire">contact</a></li>
-                <li>
-                <a href="login.html">login</a></li>
-                <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
-            </ul>
-            </nav>
+      <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">projets</a>
+          </li>
+          <li>
+            <a href="index.html#formulaire">contact</a>
+          </li>
+          <li>
+            <a href="login.html">login</a>
+          </li>
+          <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
+        </ul>
+      </nav>
     </header>
     <div class="container">
-        <main>
-            <h2>Log In</h2>
-            <form action="login" method="post">
-                <div class="input-container">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="input-container">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit" id="loginButton">Se connecter</button>
-            </form>
-            <p><a class="mdp" href="#">Mot de passe oublié</a></p>
-        </main>
-        <footer>
-            <nav>
-              <ul>
-                <li>Mentions Légales</li>
-              </ul>
-            </nav>
-          </footer>
+      <main>
+        <h2>Log In</h2>
+        <form action="login" method="post">
+          <div class="input-container">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="input-container">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <p class="hide" id="incorrect">
+            Erreur dans l’identifiant ou le mot de passe
+          </p>
+          <button type="submit" id="loginButton">Se connecter</button>
+        </form>
+        <p><a class="mdp" href="#">Mot de passe oublié</a></p>
+      </main>
+      <footer>
+        <nav>
+          <ul>
+            <li>Mentions Légales</li>
+          </ul>
+        </nav>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

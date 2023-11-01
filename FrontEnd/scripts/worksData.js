@@ -40,11 +40,17 @@ function filterCategory(e) {
   e.target.classList.add("active");
 
   allFigures.forEach((figure) => {
-    if (figure.category === e.target.dataset.name || e.target.dataset.name === "Tous") {
-      figure.classList.remove("hide");}
-    else {
-      figure.classList.add("hide");}
-    });
+    if (
+      figure.category === e.target.dataset.name ||
+      e.target.dataset.name === "Tous"
+    ) {
+      figure.classList.remove("hide");
+    } else {
+      figure.classList.add("hide");
+    }
+  });
 }
 
-filterButtons.forEach(button => button.addEventListener('click', filterCategory));
+filterButtons.forEach((button) =>
+  button.addEventListener("click", filterCategory)
+);

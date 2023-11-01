@@ -133,7 +133,7 @@ body {
   margin: auto;
   font-family: "Work Sans";
   font-size: 14px;
-  background-color: #FFFEF8;
+  background-color: #fffef8;
 }
 header {
   display: flex;
@@ -183,7 +183,7 @@ a {
   color: black;
 }
 
-a:hover{
+a:hover {
   color: #b1663c;
 }
 
@@ -249,7 +249,6 @@ li:hover {
   background-color: #1d6154;
   color: white;
 }
-
 
 .gallery {
   width: 100%;
