@@ -2,10 +2,6 @@ const repEmail = document.querySelector("#email");
 const repPassword = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
 const invalid = document.querySelector("#incorrect");
-let userAuth = {
-  userId: "",
-  token: "",
-};
 
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -29,9 +25,9 @@ loginButton.addEventListener("click", (event) => {
       return response.json();
     })
     .then((data) => {
-      userAuth.userId = data.userId;
-      userAuth.token = data.token;
-      console.log(userAuth.token, userAuth.userId);
+      window.location.href = "index.html";
+      sessionStorage.setItem("token", data.token);
+      sessionStorage.setItem("userId", data.userId);
     })
     .catch((error) => {
       console.log(error);

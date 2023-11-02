@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <title>Sophie Bluel - Architecte d'intérieur</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,20 +20,24 @@
     <meta name="description" content="" />
     <link rel="stylesheet" href="./assets/style.css" />
     <script type="module" src="scripts/worksData.js" defer></script>
+    <script type="module" src="scripts/admin.js" defer></script>
   </head>
   <body>
     <header>
       <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
       <nav>
-        <ul>
+        <ul id="navbar">
           <li>
             <a href="index.html">projets</a>
           </li>
           <li>
-            <a href="#formulaire">contact</a>
+            <a href="#formulaire" id="contact">contact</a>
           </li>
           <li>
-            <a href="login.html">login</a>
+            <a href="login.html" id="loginBtn">login</a>
+          </li>
+          <li>
+            <a id="logoutBtn" href="index.html">logout</a>
           </li>
           <li><img src="./assets/icons/instagram.png" alt="Instagram" /></li>
         </ul>
@@ -57,7 +68,12 @@
         </article>
       </section>
       <section id="portfolio">
-        <h2>Mes Projets</h2>
+        <div class="projets">
+          <h2>Mes Projets</h2>
+          <button class="edit">
+            <i class="fa-regular fa-pen-to-square icon"></i>modifier
+          </button>
+        </div>
         <div class="filters">
           <button class="filterBtn active" data-name="Tous">Tous</button>
           <button class="filterBtn" data-name="Objets">Objets</button>
