@@ -92,6 +92,7 @@ form button:hover {
   color: #1d6154;
   background-color: white;
   border: 1px solid #1d6154;
+  transition: 0.3s;
 }
 
 .mdp {

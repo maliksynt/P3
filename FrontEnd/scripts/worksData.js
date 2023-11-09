@@ -1,3 +1,7 @@
+const gallery = document.querySelector(".gallery");
+const filterButtons = document.querySelectorAll(".filterBtn");
+export const works = await fetchData();
+
 async function fetchData() {
   try {
     const response = await fetch("http://localhost:5678/api/works", {
@@ -13,13 +17,6 @@ async function fetchData() {
   }
 }
 
-const gallery = document.querySelector(".gallery");
-const works = await fetchData();
-const figure = document.querySelector("figure");
-const image = document.querySelector("img");
-const figcaption = document.querySelector("figcaption");
-const filterButtons = document.querySelectorAll(".filterBtn");
-
 works.forEach((work) => {
   const figure = document.createElement("figure");
   const image = document.createElement("img");
@@ -29,6 +26,7 @@ works.forEach((work) => {
   figure.category = work.category.name;
   figcaption.innerText = work.title;
   figure.classList.add("workfigure");
+  figure.classList.add(`id${work.id}`);
   figure.appendChild(image);
   figure.appendChild(figcaption);
   gallery.appendChild(figure);
@@ -54,3 +52,4 @@ function filterCategory(e) {
 filterButtons.forEach((button) =>
   button.addEventListener("click", filterCategory)
 );
+
