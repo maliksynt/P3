@@ -4,7 +4,6 @@ import { works } from "./worksData.js";
 export const modal = document.querySelector(".modal");
 export const overlay = document.querySelector(".overlay");
 export const closeModalBtn = document.querySelectorAll(".closeModal");
-const addPhotoBtn = document.querySelector("#addPhotoBtn");
 const modalGallery = document.querySelector(".modal-gallery");
 export const modalForm = document.querySelector(".modalForm");
 

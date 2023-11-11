@@ -399,14 +399,61 @@ li:hover {
   height: 100%;
 }
 
-.upload {
+.form .upload-file svg {
+  height: 90px;
+  width: 90px;
+  padding-top: 15px;
+}
+
+.upload-file {
   width: 100%;
   height: 420px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   background-color: #e8f1f6;
   border-radius: 5px;
+  gap: 10px;
+}
+
+.upload-file p {
+  color: #444;
+  text-align: center;
+  font-family: Work Sans;
+  font-size: 10px;
+  font-weight: 400;
+  padding-top: 5px;
+}
+
+.upload-file input {
+  display: none;
+}
+
+.upload-file #image-preview {
+  object-fit: cover;
+  height: 205px;
+  max-width: 160px;
+}
+
+label[for="image-upload"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cbd6dc;
+  color: #306685;
+  font-weight: 500;
+  padding: 10px 10px;
+  width: 165px;
+  height: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+label[for="image-upload"]:hover {
+  color: #1d6154;
+  transition: background-color 0.3s;
+  background-color: #e8f1f6;
 }
 
 .form .wrapper {
@@ -438,6 +485,10 @@ li:hover {
   height: 50px;
   border: none;
   filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.08));
+  color: #444;
+  font-family: Work Sans;
+  font-size: 14px;
+  text-indent: 15px;
 }
 
 .wrapperCategory {
@@ -460,7 +511,19 @@ li:hover {
   filter: drop-shadow(0px 4px 14px rgba(0, 0, 0, 0.08));
   background-color: white;
   cursor: pointer;
+  color: #444;
+  font-family: Work Sans;
+  font-size: 14px;
+  text-indent: 5px;
 }
+
+.wrapperCategory select option {
+  cursor: pointer;
+  color: #444;
+  font-family: Work Sans;
+  font-size: 14px;
+}
+
 .modal-gallery {
   width: 100%;
   height: 100%;
@@ -528,10 +591,11 @@ li:hover {
   width: 245px;
 }
 
-.modal-footer button:hover {
-  background-color: white;
-  color: #1d6154;
-  transition: 0.3s;
+.modal-footer p {
+  color: red;
+  font-family: "Work Sans";
+  position: absolute;
+  bottom: 53px;
 }
 
 .icon {

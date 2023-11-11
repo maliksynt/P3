@@ -52,4 +52,3 @@ function filterCategory(e) {
 filterButtons.forEach((button) =>
   button.addEventListener("click", filterCategory)
 );
-
