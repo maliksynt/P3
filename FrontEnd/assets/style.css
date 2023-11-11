@@ -649,6 +649,7 @@ label[for="image-upload"]:hover {
 
 .gallery img {
   width: 100%;
+  max-height: 490px;
 }
 #contact {
   width: 50%;

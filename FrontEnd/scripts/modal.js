@@ -12,7 +12,7 @@ function openModal() {
   overlay.style.display = "block";
 }
 
-function closeModal() {
+export function closeModal() {
   modal.style.display = "none";
   overlay.style.display = "none";
   modalForm.style.display = "none";
