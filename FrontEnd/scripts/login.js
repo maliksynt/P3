@@ -3,6 +3,7 @@ const repPassword = document.querySelector("#password");
 const loginButton = document.querySelector("#loginButton");
 const invalid = document.querySelector("#incorrect");
 
+// Fonction pour connecter l'utilisateur
 loginButton.addEventListener("click", (event) => {
   event.preventDefault();
 

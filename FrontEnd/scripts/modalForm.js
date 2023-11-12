@@ -1,6 +1,7 @@
 // Import de tout les éléments nécessaires
-import { modal, modalForm, closeModal } from "./modal.js";
+import { modal, modalForm, closeModal, populateModal } from "./modal.js";
 import { userAuth } from "./admin.js";
+import { fetchWorks, populateGallery } from "./worksData.js";
 
 const openFormBtn = document.querySelector("#addPhotoBtn");
 const backModalBtn = document.querySelector(".backModal");
@@ -60,7 +61,7 @@ function updateForm() {
 
 updateForm();
 
-// verification des champs du formulaire
+// Verification des champs du formulaire
 let valid = false;
 function checkForm() {
   const error = document.querySelector("#error");
@@ -91,56 +92,13 @@ async function sendForm(event) {
   formData.append("title", addTitleInput.value);
   formData.append("category", addCategoryInput.value);
   formData.append("image", imageUpload.files[0]);
+
   await sendNewWork(formData);
   closeModal();
 
-  const figure = document.createElement("figure");
-  const image = document.createElement("img");
-  const figcaption = document.createElement("figcaption");
-  const gallery = document.querySelector(".gallery");
-
-  // récupération de l'id du dernier élément de la galerie
-  let lastId = document.querySelector(".workfigure:last-child").className;
-  let id = parseInt(lastId.replace(/\D/g, "")) + 1;
-
-  image.src = imagePreview.src;
-  image.setAttribute("alt", addTitleInput.value);
-  figure.category = addCategoryInput.value;
-  figcaption.innerText = addTitleInput.value;
-  figure.classList.add(`workfigure`);
-  figure.id = id;
-  figure.appendChild(image);
-  figure.appendChild(figcaption);
-  gallery.appendChild(figure);
-
-  const modalGallery = document.querySelector(".modal-gallery");
-  const figureModal = document.createElement("figure");
-  const imageModal = document.createElement("img");
-  const svgTrash = document.createElement("img");
-  const deleteBtn = document.createElement("button");
-  imageModal.src = imagePreview.src;
-  imageModal.setAttribute("alt", addTitleInput.value);
-  deleteBtn.classList.add("deleteWork");
-  svgTrash.src = "assets/icons/trash-can-solid.svg";
-  deleteBtn.appendChild(svgTrash);
-  figureModal.appendChild(deleteBtn);
-  figure.classList.add(`workfigure`);
-  figureModal.appendChild(imageModal);
-  modalGallery.appendChild(figureModal);
-
-  deleteBtn.addEventListener("click", async () => {
-    figure.remove();
-    figureModal.remove();
-    await fetch(`http://localhost:5678/api/works/${figure.id}`, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        Authorization: `Bearer ${userAuth.token}`,
-      },
-    }).catch((error) => {
-      console.error(error);
-    });
-  });
+  await fetchWorks();
+  populateGallery();
+  populateModal();
 }
 
 form.addEventListener("submit", (event) => {
@@ -159,7 +117,7 @@ addPhotoBtn.addEventListener("click", (event) => {
   }
 });
 
-// Fonction envoi au backend
+// Fonction envoi d'un nouveau travail au backend
 async function sendNewWork(formData) {
   const response = await fetch("http://localhost:5678/api/works", {
     method: "POST",

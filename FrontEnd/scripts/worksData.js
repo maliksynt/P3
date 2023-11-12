@@ -1,7 +1,14 @@
 const gallery = document.querySelector(".gallery");
 const filterButtons = document.querySelectorAll(".filterBtn");
-export const works = await fetchData();
 
+export async function fetchWorks() {
+  works = await fetchData();
+}
+
+export let works = await fetchData();
+populateGallery();
+
+// Appel API pour récuperer les travaux
 async function fetchData() {
   try {
     const response = await fetch("http://localhost:5678/api/works", {
@@ -17,21 +24,26 @@ async function fetchData() {
   }
 }
 
-works.forEach((work) => {
-  const figure = document.createElement("figure");
-  const image = document.createElement("img");
-  const figcaption = document.createElement("figcaption");
-  image.src = work.imageUrl;
-  image.setAttribute("alt", work.title);
-  figure.category = work.category.name;
-  figcaption.innerText = work.title;
-  figure.classList.add("workfigure");
-  figure.classList.add(`id${work.id}`);
-  figure.appendChild(image);
-  figure.appendChild(figcaption);
-  gallery.appendChild(figure);
-});
+// Fonction pour afficher les travaux dans la galerie
+export function populateGallery() {
+  gallery.innerHTML = "";
+  works.forEach((work) => {
+    const figure = document.createElement("figure");
+    const image = document.createElement("img");
+    const figcaption = document.createElement("figcaption");
+    image.src = work.imageUrl;
+    image.setAttribute("alt", work.title);
+    figure.category = work.category.name;
+    figcaption.innerText = work.title;
+    figure.classList.add("workfigure");
+    figure.classList.add(`id${work.id}`);
+    figure.appendChild(image);
+    figure.appendChild(figcaption);
+    gallery.appendChild(figure);
+  });
+}
 
+// Fonction pour filtrer les travaux par catégorie
 function filterCategory(e) {
   const allFigures = document.querySelectorAll(".workfigure");
   document.querySelector(".active").classList.remove("active");
